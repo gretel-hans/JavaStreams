@@ -12,11 +12,11 @@ public class Order {
      List<Product> products;
      Customer customer;
     
-	public Order(long id, String status, LocalDate orderDate, LocalDate deliveryDate, List<Product> products, Customer customer) {
+	public Order(long id, String status, LocalDate orderDate, List<Product> products, Customer customer) {
 		this.id = id;
 		this.status = status;
 		this.orderDate = orderDate;
-		this.deliveryDate = deliveryDate;
+		this.deliveryDate = deliveryDate.plusDays(10);
 		this.products = products;
 		this.customer = customer;
 	}

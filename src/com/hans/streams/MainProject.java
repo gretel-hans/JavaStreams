@@ -32,9 +32,9 @@ public class MainProject {
 
 		LocalDate oggi=LocalDate.now();
 
-		Order o1 = new Order(3455, "Shiped", oggi,oggi, listaProdottiOrdine, c3);
-		Order o2 = new Order(3240, "Delivered", oggi,oggi, listaProdottiOrdine, c1);
-		Order o3 = new Order(1302, "Prepared", oggi,oggi, listaProdottiOrdine, c1);
+		Order o1 = new Order(3455, "Shiped", oggi, listaProdottiOrdine, c3);
+		Order o2 = new Order(3240, "Delivered", oggi, listaProdottiOrdine, c1);
+		Order o3 = new Order(1302, "Prepared", oggi, listaProdottiOrdine, c1);
 
 		listaTotaleOrdini.add(o1);
 		listaTotaleOrdini.add(o2);
@@ -67,6 +67,7 @@ public class MainProject {
 
 	public static void secondoEsercizio(){
 		List<Order> secondaLista=listaTotaleOrdini.stream()
+		.filter(e->e.products).stream().filter(e->e.category.equals("Baby"))
 		
 		.collect(Collectors.toList());
 
